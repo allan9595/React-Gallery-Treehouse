@@ -4,13 +4,13 @@ import Nav from './components/Nav';
 import Loading from './components/Loading'
 import Search from './components/Search';
 import ErrorNotFound from './components/Error';
-//import API_ACCESS_KEY from './config';
+import API_ACCESS_KEY from './config_prod';
 import axios from 'axios';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 
-const API_ACCESS_KEY  = process.env.API_ACCESS_KEY
 class App extends Component {
+  
   //state declaring
   state = {
     photos: [],
