@@ -1,3 +1,27 @@
+# React Gallery
+**React Gallery App** 
+
+This app allows the user to view and search free beautiful images. This app is built on React and Unsplash API. The screenshot is taken in fast 3G network throttling. In order to download this app and host on local, you would have to signup an API key from Unsplash at https://unsplash.com/documentation#search-photos. Then create a new file under /src name it as config.js, assign your access_key as: 
+
+const apiAccessKey = 'YOUR_API_KEY';
+
+export default apiAccessKey;
+
+## Note
+If you want to see the loading indicator, change the network throttling in your browser.  
+
+## Video Walkthrough
+
+<img src='https://github.com/allan9595/React-Gallery-Treehouse/blob/master/gallery.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+
+## License
+
+    Copyright 2019 BOHAN ZHANG
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

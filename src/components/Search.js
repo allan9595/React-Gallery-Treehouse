@@ -10,25 +10,25 @@ class Search extends Component {
 
     handleChange = (e) => {
         this.setState({
-            inputText: e.target.value
+            inputText: e.target.value //get the input field in real time and set them to the state
         })
     }
 
     setRedirect = () => {
         this.setState({
-            redirect: true
+            redirect: true 
         })    
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.onSearch(this.state.inputText);
+        e.preventDefault(); //prevent default refresh
+        this.props.onSearch(this.state.inputText); //pass the search input to the onSearch props func
         e.currentTarget.reset();
     }
 
     redirectToSearch = () => {
         if(this.state.redirect){
-            return <Redirect to="/search" />
+            return <Redirect to="/search" /> //set the redirect to search page after the button clicked, it is used for display images on the search route
         }
     }
     //The redirect func inspired from this article https://medium.com/@anneeb/redirecting-in-react-4de5e517354a
@@ -42,7 +42,7 @@ class Search extends Component {
                     onChange={this.handleChange}
                     required
                 />
-                {this.redirectToSearch()}
+                {this.redirectToSearch()} 
                 <button 
                     type="submit" 
                     className="search-button"
