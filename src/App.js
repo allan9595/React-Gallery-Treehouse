@@ -28,7 +28,7 @@ class App extends Component {
     })
 
     //the following three request are for default topics like dogs, sunsets and waterfall
-    axios.get(`https://api.unsplash.com/search/photos?client_id=${API_ACCESS_KEY}&per_page=24&page=1&orientation=squarish&query=dogs`)
+    axios.get(`https://api.unsplash.com/search/photos?client_id=${process.env.API_ACCESS_KEY}&per_page=24&page=1&orientation=squarish&query=dogs`)
       .then((response) => {
         //once the promise back, then set them to state and change the loading to false
         this.setState({
