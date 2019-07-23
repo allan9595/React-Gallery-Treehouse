@@ -9,6 +9,8 @@ export default apiAccessKey;
 
 You can visit the live version at [React_Gallery](https://react-gallery-treehouse.herokuapp.com)
 
+You can read more about the Build Pack at [Build_Pack](https://github.com/mars/create-react-app-buildpack#user-content-environment-variables)
+
 ## Note
 If you want to see the loading indicator, change the network throttling in your browser.  
 
