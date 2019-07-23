@@ -7,6 +7,8 @@ const apiAccessKey = 'YOUR_API_KEY';
 
 export default apiAccessKey;
 
+You can visit the live version at [React_Gallery](https://react-gallery-treehouse.herokuapp.com)
+
 ## Note
 If you want to see the loading indicator, change the network throttling in your browser.  
 
