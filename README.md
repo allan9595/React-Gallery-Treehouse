@@ -14,7 +14,7 @@ You can read more about the Build Pack at [Build_Pack](https://github.com/mars/c
 ## Note
 If you want to see the loading indicator, change the network throttling in your browser.  
 
-Please not that the ./config_prod here is for the heroku deployment purposes, it is not the actual API key. You would have to get your own API key as I mentioned before.
+Please note that the ./config_prod here is for the Heroku deployment purpose. It is not the actual API key. You would have to get your own API key as I mentioned before.
 
 ## Video Walkthrough
 
