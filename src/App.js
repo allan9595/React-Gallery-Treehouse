@@ -17,7 +17,8 @@ class App extends Component {
     photos_waterfalls:[],
     photos_sunsets:[],
     search_results:[],
-    isLoading: false
+    isLoading: false,
+    redirect: false
   }
 
 
@@ -73,13 +74,28 @@ class App extends Component {
         //once the promise back, then set them to state and change the loading to false
         this.setState({
           search_results: response.data.results,
-          isLoading: false
+          isLoading: false,
+          redirect: false
         })
       })
       .catch(error => {
         console.log('Fetching error, please try again later... ', error);
       });
   }
+
+  redirectSearch = () => {
+    this.setState({
+      redirect: true
+    });
+  }
+  
+  redirectSearchSet = () => {
+    if(this.state.redirect){
+      return <Redirect to="/search" />
+    };
+  }
+
+
 
   render(){
     let loading;
@@ -91,13 +107,17 @@ class App extends Component {
     return(
       <BrowserRouter>
         <div className="container">
-          <Search title='Search Result' onSearch={this.searchPhotos} />
+          <Search title='Search Result' 
+            onRedirect={this.redirectSearch} 
+            onSearch={this.searchPhotos} 
+            redirect={this.redirectSearchSet}
+          />
           <Nav />
           <Switch>  
             <Route exact path="/" render={() => <Redirect to = "/dogs"/>}/> {/** if the app load hit the home route, then redirect to dogs*/} 
             <Route exact path="/dogs" render={(props) => <PhotoList {...props} title='Beautiful Dog' data={this.state.photos} />}/>
             <Route exact path="/waterfalls" render={(props) => <PhotoList {...props} title='Beautiful Waterfalls' data={this.state.photos_waterfalls} />}/>
-            <Route exact path="/sunsets" render={(props) => <PhotoList {...props} title='Beautiful Sunsets' data={this.state.photos_sunsets} />}/>
+            <Route path="/sunsets" render={(props) => <PhotoList {...props} title='Beautiful Sunsets' data={this.state.photos_sunsets} />}/>
             <Route 
               exact path="/search" 
               render={(props) => <PhotoList {...props} title='Search Result' data={this.state.search_results} isLoading={this.state.isLoading} />}
